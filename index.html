@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./fonts.css">
+  <title>El pollo loco</title>
+  <link rel="icon" type="image/x-icon" href="./assets/imgs/2_character_pepe/W-21 for htp.png">
+  <script src="./classes/drawable-object.class.js"></script>
+  <script src="./classes/movable-object.class.js"></script>
+  <script src="./classes/background-object.class.js"></script>
+  <script src="./classes/character.class.js"></script>
+  <script src="./classes/brown-chicken.class.js"></script>
+  <script src="./classes/yellow-chicken.class.js"></script>
+  <script src="./classes/endboss.class.js"></script>
+  <script src="./classes/clouds.class.js"></script>
+  <script src="./classes/keyboard.class.js"></script>
+  <script src="./classes/level.class.js"></script>
+  <script src="./classes/life-statusbar.class.js"></script>
+  <script src="./classes/bottle-statusbar.class.js"></script>
+  <script src="./classes/coin-statusbar.class.js"></script>
+  <script src="./classes/endboss-statusbar.class.js"></script>
+  <script src="./classes/throwable-object.class.js"></script>
+  <script src="./classes/coin.class.js"></script>
+  <script src="./classes/bottle.class.js"></script>
+  <script src="./classes/world.class.js"></script>
+  <script src="./classes/collision-manager.class.js"></script>
+  <script src="./classes/sound-manager.class.js"></script>
+  <script src="./levels/level1.js"></script>
+  <script src="./javaScript/game.js"></script>
+  <script src="./javaScript/script.js"></script>
+</head>
+<body>
+
+  <h1>El pollo loco</h1>
+
+  <div class="canvasBox">
+    <div class="howToPlayContainer d-none" id="howToPlayContainer">
+      <button onclick="closeHowToPlay()" class="closeHtp" id="closeHtp">X</button>
+      <img src="./assets/imgs/backgroundGame/howToPlay.PNG" alt="">
+    </div>
+    <div class="iconContainer">
+      <div>
+        <img id="toggleSound" class="toggleSound" src="assets/icons/laud.png" onclick="toggleMute()" alt="Toggle Sound">
+      </div>
+      <img src="./assets/icons/info.png" alt="" id="infobtn" class="infobtn" onclick="impressum()">
+    </div>
+    <div class="startscreen backgroundScreen" id="startscreen">
+      <img src="./assets/imgs/9_intro_outro_screens/start/startscreen_1.png">
+    </div>
+    <div class="canvasContainer d-none" id="canvasContainer">
+      <canvas id="canvas" width="720" height="480"></canvas>
+    </div>
+    <div class="mobileButtonContainer" id="mobileButtonContainer">
+      <div class="moveBtn">
+        <img id="btnLeft" src="./assets/icons/left.png" alt="">
+        <img id="btnRight" src="./assets/icons/right.png" alt="">
+      </div>
+      <div class="jumpBtn">
+        <img id="btnJump" src="./assets/icons/space.png" alt="">
+      </div>
+      <div class="throwBtn">
+        <button id="btnThrow"><img src="./assets/imgs/6_salsa_bottle/salsa_bottle throw.png" alt=""></button>
+      </div>
+    </div>
+    <div class="startGameContainer" id="startGameContainer">
+      <button onclick="init()">Start</button>
+      <button onclick="howToPlayBtn()">how to play</button>
+    </div>
+    <div class="endscreenLooseContainer d-none" id="endscreenLoose">
+      <img src="./assets/imgs/9_intro_outro_screens/game_over/oh no you lost!.png" alt="">
+      <div class="startGameContainer">
+        <button onclick="menu()">Menu</button>
+        <button onclick="restartGame()">Try again</button>
+      </div>
+    </div>
+    <div class="endscreenWinContainer d-none" id="endscreenWin">
+      <img src="./assets/imgs/9_intro_outro_screens/win/win_2.png" alt="">
+      <div class="startGameContainer">
+        <button onclick="menu()">Menu</button>
+        <button onclick="restartGame()">Try again</button>
+      </div>
+    </div>
+    <div class="impressum d-none" id="impressum">
+      <div onclick="closeImpressum()" class="closeHtp" id="closeHtp">
+        <img src="./assets/icons/back.png" alt="">
+      </div>
+      <h2>Impressum</h2>
+      <h3>Diensteanbieter</h3>
+      <p>Saskia Dietrich</p>
+      <p>Pfennigsweide 4</p>
+      <p>52355 Düren</p>
+      <p>Deutschland</p>
+      <h3>Kontaktmöglichkeiten</h3><p>E-Mail-Adresse:<a href="mailto:mail@saskia-dietrich.de">mail@saskia-dietrich.de</a></p>
+      <p>Telefon: 0178-6775045</p>
+      <h3>Bildnachweise</h3><p>Bildquellen und Urheberrechtshinweise: </p>
+      <p>Icons von Icons8</p>
+      <p class="seal">
+        <a href="https://datenschutz-generator.de/" 
+        title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken." 
+        target="_blank" rel="noopener noreferrer nofollow">
+        Erstellt mit kostenlosem Datenschutz-Generator.de von Dr. Thomas Schwenke</a>
+      </p>
+    </div>
+  </div>
+  <div class="bottomWrapper" id="bottomWrapper"></div>
+</body>
+</html>

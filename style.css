@@ -1,0 +1,471 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b24c43
+}
+
+body {
+  min-height: 100vh;
+  background-image: url('assets/imgs/backgroundGame/cactus.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#pleaserotate-graphic {
+  fill: #fff;
+}
+
+#pleaserotate-backdrop {
+  color: #fff;
+  background-color: #000;
+}
+
+#pleaserotate-graphic {
+  margin-left: 50px;
+  width: 200px;
+  animation: pleaserotateframes ease 2s infinite;
+  transform-origin: 50% 50%;
+}
+
+#pleaserotate-backdrop {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+#pleaserotate-container {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pleaserotate-message {
+  margin-top: 20px;
+  font-size: 1.3em;
+  text-align: center;
+  font-family: Verdana, Geneva, sans-serif;
+  text-transform: uppercase;
+}
+
+#pleaserotate-message small {
+  opacity: .5;
+  display: block;
+  font-size: .6em;
+}
+
+@keyframes pleaserotateframes {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  49% {
+      transform: rotate(-90deg);
+  }
+
+  100% {
+      transform: rotate(90deg);
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+canvas {
+  background-color: black;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 720 / 480;
+}
+
+.canvasBox {
+  position: relative;
+  width: 720px;
+  height: 480px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Oi";
+  font-size: 60px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.backgroundScreen img {
+  position: relative;
+  z-index: 8;
+  width: 100%;
+  height: 100%;
+}
+
+.iconContainer {
+  position: absolute;
+  top: 15px;
+  right: 55px;
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  z-index: 9;
+}
+
+.iconContainer img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.iconContainer img:hover {
+  transform: scale(1.05);
+}
+
+.toggleSound {
+  height: 50px;
+  width: 50px;
+}
+
+.howToPlayContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+
+.closeHtp {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  font-family: "Sancreek", sans-serif;
+  font-size: 25px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.howToPlayContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+.impressum {
+  position: absolute;
+  z-index: 11;
+  height: 100%;
+  font-family: "Sancreek", sans-serif;
+  background-color: bisque;
+  overflow: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #f1f1f1;
+}
+
+.impressum a {
+  text-decoration: none;
+  color: black;
+}
+
+.impressum::-webkit-scrollbar {
+  width: 12px;
+}
+
+.impressum::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+.impressum::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 6px;
+  border: 3px solid #f1f1f1;
+}
+
+.startGameContainer, 
+.startGameAgainContainer {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+  width: 100%;
+}
+
+.startGameContainer button {
+  font-family: Oi;
+  color: maroon;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #e88b41;
+  transition: background-color 0.3s ease;
+}
+
+.startGameContainer button:hover {
+  background-color: #e88b41;
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.closeHtp {
+  display: flex;
+  z-index: 5;
+}
+
+.closeHtp img {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.mobileButtonContainer {
+  position: absolute;
+  bottom: 10px;
+  z-index: 7;
+  display: none;
+  justify-content: space-around;
+  width: 720px;
+}
+
+.moveBtn img, .throwBtn img, .jumpBtn img {
+  width: 45px;
+  height: 45px;
+}
+
+.throwBtn button {
+  border: none;
+  background-color: black;
+  border-radius: 50px;
+}
+
+.endscreenLooseContainer,
+.endscreenWinContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.endscreenLooseContainer img,
+.endscreenWinContainer img {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+
+}
+
+/* Kleine Geräte (z.B. Smartphones) */
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+  .mobileButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 300px; /* Beispielbreite anpassen */
+  }
+}
+
+/* Mittlere Geräte (z.B. Tablets, inklusive iPad Air) */
+@media only screen and (min-width: 601px) and (max-width: 1180px) and (orientation: landscape) {
+  .mobileButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 400px; /* Beispielbreite anpassen */
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 820px) and (orientation: portrait) {
+  .mobileButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 400px; /* Beispielbreite anpassen */
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 820px) and (orientation: portrait) {
+  .mobileButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 400px; /* Beispielbreite anpassen */
+  }
+}
+
+/* iPad Air im Landscape-Modus */
+@media only screen and (min-width: 601px) and (max-width: 1180px) and (orientation: landscape) and (aspect-ratio: 4/3) {
+  .mobileButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 400px; /* Beispielbreite anpassen */
+  }
+}
+
+
+/* Größere Geräte (z.B. kleinere Laptops) */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .mobileButtonContainer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .moveBtn img, .throwBtn img, .jumpBtn img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgroundScreen img {
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    display: none;
+    font-size: 40px;
+  }
+
+  .iconContainer img{
+    width: 30px;
+    height: 30px;
+  }
+
+  .startGameContainer button {
+    font-size: 15px;
+    padding: 5px;
+  }
+
+  .endscreenLoose img,
+  .endscreenWin img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .moveBtn img, .throwBtn img, .jumpBtn img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .canvasBox {
+    width: 100%;
+    justify-content: center;
+  }
+
+  canvas {
+    width: 100%;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .backgroundScreen img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mobileButtonContainer img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  body {
+    justify-content: center;
+  }
+  .canvasContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .backgroundScreen img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  .canvasBox {
+    height: 100%;
+    width: 100%;
+  }
+
+  .canvasContainer {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .backgroundScreen img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+  @media only screen and (max-height: 400px) {
+    .canvasBox {
+      height: 100%;
+    }
+  
+    .canvasContainer {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    .backgroundScreen img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
